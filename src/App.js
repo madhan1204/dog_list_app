@@ -3,6 +3,7 @@ import { CssBaseline, AppBar, Toolbar, Typography, Container, Box, Divider } fro
 import DogList from './pages/Dogs';
 import fetchDogs from './api/Dogsapi';
 
+//displaying the image of the dog and also integrating the dogs component
 const App = () => {
   const [dogs, setDogs] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');

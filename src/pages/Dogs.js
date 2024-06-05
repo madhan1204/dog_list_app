@@ -1,6 +1,7 @@
 import React from 'react';
 import { List, ListItem, ListItemText, ListItemAvatar, Avatar, Typography, TextField, Box } from '@mui/material';
 
+//Dog list component where the list of dogs are displayed
 const DogList = ({ dogs, searchQuery, handleSearch, handleDogClick }) => {
   return (
     <Box display="flex">
@@ -12,12 +13,12 @@ const DogList = ({ dogs, searchQuery, handleSearch, handleDogClick }) => {
           label="Search by Breed"
           value={searchQuery}
           onChange={handleSearch}
-          InputProps={{ style: { borderColor: 'black' } }} // Set border color to black
+          InputProps={{ style: { borderColor: 'black' } }}
           sx={{ backgroundColor: 'white', borderRadius: '0', '& .MuiOutlinedInput-root': { borderRadius: '0' } }}
         />
         <List>
           {dogs.map((dog) => (
-            <ListItem key={dog.id} alignItems="flex-start" button onClick={() => handleDogClick(dog.url)}>
+            <ListItem key={dog.id} alignItems="flex-start" onClick={() => handleDogClick(dog.url)}>
               <ListItemAvatar>
                 <Avatar variant="square" src={dog.url} alt={dog.breeds[0].name} />
               </ListItemAvatar>
